@@ -18,6 +18,18 @@
             type="text/css" />
         <link rel="stylesheet" href="assets/css/style.css" />
         <title>Rosie</title>
+
+        <!-- EmailJS Scripts -->
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init({
+                    publicKey: "AmlhP_rxgV1yX36fn",
+                });
+            })();
+        </script>
     </head>
     <body>
         <header>
@@ -93,7 +105,7 @@
                     <h5 class="uppercase text-center">Let's work together!</h5>
 
                     <div class="center-form">
-                        <form>
+                        <form onsubmit="return sendMail(this);">
                             <input
                                 type="text"
                                 name="name"
@@ -203,5 +215,6 @@
                 </div>
             </div>
         </footer>
+        <script src="assets/js/sendEmail.js"></script>
     </body>
 </html>
